@@ -55,7 +55,7 @@ class db {
 
         $ids = array();
         if (isset($filter['architect'])&&count($filter['architect'])>0) {
-            $this->dbh->exec("SET CHARACTER SET utf8");
+            //$this->dbh->exec("SET CHARACTER SET utf8");
             $a = str_replace('&amp;', '&', implode('\',\'', $filter['architect']));
             $sqla = 'SELECT "ID" from "013_Architect" WHERE "Architect" IN (\'' . $a . '\')';
             $sth = $this->dbh->prepare($sqla);
@@ -65,7 +65,7 @@ class db {
         }
 
         if (isset($filter['naam'])&&count($filter['naam'])>0) {
-            $this->dbh->exec("SET CHARACTER SET utf8");
+            //$this->dbh->exec("SET CHARACTER SET utf8");
             $a = implode('\',\'', $filter['naam']);
             $sqla = 'SELECT "ID" from "011_Naam_Kerk" WHERE "Naam_Kerk" IN (\'' . $a . '\')';
             $sth = $this->dbh->prepare($sqla);
@@ -76,7 +76,7 @@ class db {
 
         $sql = substr($sql, 0, -4) . ' ORDER BY plaats, naam';
         error_log($sql);
-        $this->dbh->exec("SET CHARACTER SET utf8");
+        //$this->dbh->exec("SET CHARACTER SET utf8");
         $sth = $this->dbh->prepare($sql);
         $sth->execute();
         $res = $sth->fetchAll(PDO::FETCH_ASSOC);
@@ -84,7 +84,7 @@ class db {
     }
 
     Function getAll() {
-        $this->dbh->exec("SET CHARACTER SET utf8");
+        //$this->dbh->exec("SET CHARACTER SET utf8");
         $sql = "SELECT * from ".DB_VIEW." ORDER BY plaats, naam";
         $sth = $this->dbh->prepare($sql);
         $sth->execute();
@@ -93,7 +93,7 @@ class db {
     }
 
     function getGemeenten() {
-        $this->dbh->exec("SET CHARACTER SET utf8");
+        //$this->dbh->exec("SET CHARACTER SET utf8");
         $sql = "SELECT * from ngr_gemeente";
         $sth = $this->dbh->prepare($sql);
         $sth->execute();
@@ -102,7 +102,7 @@ class db {
     }
 
     function getProvincies() {
-        $this->dbh->exec("SET CHARACTER SET utf8");
+        //$this->dbh->exec("SET CHARACTER SET utf8");
         $sql = "SELECT * from ngr_provincie";
         $sth = $this->dbh->prepare($sql);
         $sth->execute();
@@ -119,7 +119,7 @@ class db {
     }
 
     function getInfo($id) {
-        $this->dbh->exec("SET CHARACTER SET utf8");
+        //$this->dbh->exec("SET CHARACTER SET utf8");
         $sql = 'SELECT * FROM "01_Hoofdtabel_Kerken" WHERE "ID"=:id';
         $sth = $this->dbh->prepare($sql);
         $sth->execute(array(":id" => $id));

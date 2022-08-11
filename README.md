@@ -1,3 +1,3 @@
 # Kerkenkaart viewer
 
-Backend scripts for use with the vu-geoplaza mapviewer 
+OpenLayers based Custom map viewer with some added search capabilities for the Kerken database of Herman Wesselink. 
