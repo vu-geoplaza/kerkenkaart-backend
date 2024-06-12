@@ -1,11 +1,12 @@
 <?php
-Define('DBHOST', 'kerken-db');
-Define('DBPORT', '5432');
-Define('DB', 'kerken');
-Define('DBUSER', $_ENV['POSTGRES_USER']);
-Define('DBPW', $_ENV['POSTGRES_PASSWORD']);
+// do not commit
+Define('DBHOST','*****');
+Define('DBPORT','*****');
+Define('DB','kerken');
+Define('DBUSER','*****');
+Define('DBPW','*****');
 
-Define('BASE_URL_MR', 'https://monumentenregister.cultureelerfgoed.nl/monumenten/');
+Define('BASE_URL_MR', 'https://monumentenregister.cultureelerfgoed.nl/monumenten/')
 
 Define('DENOMS', array(
     "Christelijke Gereformeerde Kerk",
@@ -22,6 +23,4 @@ Define('DENOMS', array(
     "Rooms-katholieke Kerk",
     "Overig"
 ));
-
 ?>
-

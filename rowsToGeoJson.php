@@ -62,7 +62,7 @@ Function arrValues($k, $properties, $r)
     foreach ($r as $arrval) {
         foreach ($arrval as $key => $value) {
             if ($key !== 'ID') {
-				$properties->{$k}[$i] = (object)[];
+                if (!isset($properties->{$k}[$i])) { $properties->{$k}[$i]=(object)[]; }
                 $properties->{$k}[$i]->{$key} = isset($value) ? $value : '';
             }
         }
